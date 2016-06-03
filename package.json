@@ -1,0 +1,4 @@
+{
+	"aws-sdk": "*",
+	"twitter-node-client": "*"
+}

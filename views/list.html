@@ -1,0 +1,15 @@
+<html>
+	</head>
+		<script src='./jquery.js' language='javascript'></script>
+	</head>
+	<body>
+		<div>
+		<ul id="list"></ul>
+		</div>
+		<script language='javascript'>
+			$.get('https://mtliwp81q8.execute-api.eu-west-1.amazonaws.com/prod/dahoam-display-tweets', function(data) {
+					console.log($(data).each(function(key, item) {$('#list').append("<li>" + item + "</li>")}));
+			});
+		</script>
+	</body>
+</html>
