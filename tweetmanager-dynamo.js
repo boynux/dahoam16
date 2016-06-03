@@ -5,13 +5,14 @@ let AWS = require('aws-sdk');
 var TweetManager = class {
 
     constructor(config) {
-	    AWS.config.update({
+        AWS.config.update({
             region: 'eu-west-1'
         });
 
         this.config = config;
         this.client = new AWS.DynamoDB.DocumentClient();
         this.dynamo_table = 'dahoam-workshop-tweets';
+	this.s3_bucket = 'dahoam-lambda-workshop';
     }
 
     getFile(bucket, key, callback) {
@@ -36,7 +37,7 @@ var TweetManager = class {
 
     getState(f) {
         var s3 = new AWS.S3();
-        var params = {Bucket: 'dahoamLambdaWorkshop', Key: 'state.json'};
+        var params = {Bucket: this.s3_bucket, Key: 'state.json'};
 
         s3.getObject(params, function(err, data) {
             if(err) {
@@ -78,7 +79,7 @@ var TweetManager = class {
     }
 
     storeState(state) {
-        var s3bucket = new AWS.S3({params: {Bucket: 'dahoamLambdaWorkshop'}});
+        var s3bucket = new AWS.S3({params: {Bucket: this.s3_bucket}});
         s3bucket.createBucket(function() {
             var params = {Key: 'state.json', Body: JSON.stringify(state)};
             s3bucket.upload(params, function(err, data) {

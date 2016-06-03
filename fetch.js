@@ -16,7 +16,6 @@ exports.start = function (config) {
         var data = JSON.parse(str);
         var tweetManager = new TweetManager();
 
-
         data.statuses.forEach(function(item) {
             tweetManager.storeTweet({
                     id: item.id,
@@ -30,6 +29,7 @@ exports.start = function (config) {
         });
 
         tweetManager.storeState(data.search_metadata);
+
     };
 
     tweetManager.getState(function(state) {
