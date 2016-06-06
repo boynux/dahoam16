@@ -73,4 +73,5 @@ Steps to go thought this workshop:
 * Step 13:
 	Lanuch view/cloud.html in your browser. You should be able to see the words cloud
 
-
+* Step 14:
+	**Please delete all resources after the workshop for security purpose.**
