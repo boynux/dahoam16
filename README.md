@@ -42,12 +42,17 @@ Steps to go thought this workshop:
 
 * Step 7:
 	Create an API Gateway for the Lambda from Step 6 from API Endpoint tab:
+		Type: API Gateway
+		API Name: "DahoamTwitterAPI"
+		From Security choose "Open"
+		(Leave other field as it is)
 
 * Step 8:
 	Click on API Enpoint stage name (redirects to API Gateway page):
 		Choose the enpoint name you've created in step 7
 		From actions menu choose "Enable CORS"
 		From actions menu choose "Deploy API"
+		
 
 * Step 9:
 	Edit views/list.html and replace the URL with the one you just created at step 7
