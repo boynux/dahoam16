@@ -7,6 +7,7 @@ Steps to go thought this workshop:
 
 * Step 2: Create a new Lambda by uploading the content of this repository as a Zip file:
 
+	* Edit `tweetermanager-dynamo.js` file and change S3 bucket name (add your name as a prefix)
 	* Handler: fetch.start
 	* Role: Step 1 created role
 	* Timeout: 5 minutes
